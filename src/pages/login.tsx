@@ -38,38 +38,40 @@ const Login = () => {
 		  setErrors(validationErrors);
 		} else {
       setLoading(true)
-      try {
-        const response = await axios.post(
-          url,
-          JSON.stringify({
-            process: "tp_login",
-            l_username: formData.username,
-            l_password: formData.password,
-          }),
-          {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          }
-        );
-        console.log(response.data)
-        let userData = response.data.data
-        let token = userData.api_key
-        let message = response.data.server_message
-				if (message === 'Login Successful'){
-					setLoading(false)
-					toast.success('Login Successful')
-          login(token, userData )
-				}else{
-          setLoading(false)
-					toast.error(message)
-        }
-      } catch (error) {
-        toast.error('Login Failed')
-        setLoading(false)
-        console.error('Login failed', error);
-        // Handle login error, e.g., display an error message
-      }      
+      router.push('/dashboard')
+      setLoading(false)
+      // try {
+      //   const response = await axios.post(
+      //     url,
+      //     JSON.stringify({
+      //       process: "tp_login",
+      //       l_username: formData.username,
+      //       l_password: formData.password,
+      //     }),
+      //     {
+      //       headers: {
+      //         'Content-Type': 'application/json',
+      //       },
+      //     }
+      //   );
+      //   console.log(response.data)
+      //   let userData = response.data.data
+      //   let token = userData.api_key
+      //   let message = response.data.server_message
+			// 	if (message === 'Login Successful'){
+			// 		setLoading(false)
+			// 		toast.success('Login Successful')
+      //     login(token, userData )
+			// 	}else{
+      //     setLoading(false)
+			// 		toast.error(message)
+      //   }
+      // } catch (error) {
+      //   toast.error('Login Failed')
+      //   setLoading(false)
+      //   console.error('Login failed', error);
+      //   // Handle login error, e.g., display an error message
+      // }      
     }
 
 

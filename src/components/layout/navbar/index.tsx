@@ -60,14 +60,9 @@ const MiniDrawer: React.FC<DrawerProps> = ({ children }) => {
     signOut()
     router.push('/login')
   }
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
+  const toggleSidebar = () => {
+    setOpen(!open);
+  }
   const accordionStyle = {
     background: "transparent",
     boxShadow: "none",
@@ -76,8 +71,11 @@ const MiniDrawer: React.FC<DrawerProps> = ({ children }) => {
   };
 
   return (
-    <div className="flex w-full">
-      <Navbar handleClick={''}/>
+    <div className="flex w-full max-h-screen">
+        <div className= {`w-[70%] md:w-[40%] lg:w-[20%] z-[999999999] h-screen ${open ? 'translate-x-0':'-translate-x-full'} lg:translate-x-0 absolute lg:fixed transition-all`}>
+          <Navbar handleClick={toggleSidebar}/>
+        </div>
+
 
       <div className="flex flex-col w-full lg:w-[83%] lg:ml-[17%] " >
 
@@ -99,7 +97,7 @@ const MiniDrawer: React.FC<DrawerProps> = ({ children }) => {
                       <IconButton
                         color="inherit"
                         aria-label="open drawer"
-                        onClick={handleDrawerOpen}
+                        onClick={()=>setOpen(true)}
                         edge="start"
                         // sx={{
                         //   marginRight: 5,
@@ -114,7 +112,7 @@ const MiniDrawer: React.FC<DrawerProps> = ({ children }) => {
                       <IconButton
                         color="inherit"
                         aria-label="Close drawer"
-                        onClick={handleDrawerClose}
+                        onClick={()=>setOpen(false)}
                         edge="start"
                         // sx={{
                         //   marginRight: 5,
@@ -170,7 +168,7 @@ const MiniDrawer: React.FC<DrawerProps> = ({ children }) => {
         </div>
         <Box
           // component="main"
-          onClick={handleDrawerClose}
+          onClick={()=>setOpen(false)}
           sx={{
             flexGrow: 1,
             // p: 6,

@@ -30,7 +30,7 @@ import { paths } from '../../../../utils/data';
 import { ListItemIcon } from '@mui/material';
 
 interface NavProps {
-  handleClick:string
+  handleClick: () => void;
 }
 
 const Navbar = ({handleClick}:NavProps) => {
@@ -46,14 +46,7 @@ const Navbar = ({handleClick}:NavProps) => {
       signOut()
       router.push('/login')
     }
-    const handleDrawerOpen = () => {
-      setOpen(true);
-    };
-  
-    const handleDrawerClose = () => {
-      setOpen(false);
-    };
-  
+
     const accordionStyle = {
       background: "transparent",
       boxShadow: "none",
@@ -64,7 +57,7 @@ const Navbar = ({handleClick}:NavProps) => {
 
 
   return (
-    <div className={`z-[888] w-[75%] md:w-[30%] lg:w-[17%] fixed h-screen transition-all ease-in-out duration-500  ${open? 'translate-x-0':'translate-x-[-20rem]'} lg:translate-x-0`}>
+    // <div className={`z-[888] w-[75%] md:w-[30%] lg:w-[17%] fixed h-screen transition-all ease-in-out duration-500  ${open? 'translate-x-0':'translate-x-[-20rem]'} lg:translate-x-0`}>
     <div className="bg-[#020d1e] h-[100%] w-full ">
       <DrawerHeader>
         <div className="mt-4 mb-6">
@@ -80,7 +73,7 @@ const Navbar = ({handleClick}:NavProps) => {
         </IconButton> */}
       </DrawerHeader>
       {/* <Divider /> */}
-      <div className="flex h-[80vh] flex-col">
+      <div className="flex h-[80vh] flex-col overflow-y-auto">
         <Box>
           <List sx={{color:'#fff'}}>
             {paths?.map((item, index) => {
@@ -100,7 +93,7 @@ const Navbar = ({handleClick}:NavProps) => {
                       <AccordionDetails>
                         {item.children?.map((link, index) => (
                           <div key={index} className="flex flex-col pl-3">
-                            <Link onClick={handleDrawerClose} className="py-2 text-[#fff]" href={link.link}>
+                            <Link onClick={handleClick} className="py-2 text-[#fff]" href={link.link}>
                               {link.title} <ArrowRightAltIcon />
                             </Link>
                           </div>
@@ -108,7 +101,7 @@ const Navbar = ({handleClick}:NavProps) => {
                       </AccordionDetails>
                     </Accordion>
                   ) : (
-                    <Link className='mb-8' onClick={handleDrawerClose} href={item.link} key={index}>
+                    <Link className='mb-8' onClick={handleClick} href={item.link} key={index}>
                       <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                           sx={{
@@ -156,7 +149,7 @@ const Navbar = ({handleClick}:NavProps) => {
       </div>
 
     </div>
-  </div>
+  // </div>
   )
 }
 

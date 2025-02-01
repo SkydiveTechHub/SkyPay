@@ -88,7 +88,7 @@ function Dashboard() {
 							// },
 						}}
 					>
-						<div className="flex flex-col w-[50%] md:flex-row md:w-full justify-between">
+						<div className="flex flex-row items-center w-full justify-between">
 							<p
 								style={{ color: "rgba(30, 0, 41, 1)" }}
 								className="font-int font-[600] text-[16px]"
