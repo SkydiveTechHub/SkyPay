@@ -1,0 +1,122 @@
+.accordion {
+  width: 80%;
+  margin: auto;
+  /* margin-bottom: 150px; */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item {
+  padding: 20px 24px;
+  padding-right: 48px;
+  cursor: pointer;
+  background-color: #fff;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  /* display: grid;
+  grid-template-columns: auto 1fr auto; */
+  display: flex;
+  flex-direction: column;
+  column-gap: 24px;
+  row-gap: 16.38px;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  /* Add transition properties */
+  transition: border-top 0.3s ease-in, margin-top 0.3s ease-in;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.number {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(40, 191, 241);
+}
+
+.icon {
+  font-size: 22px;
+  font-weight: 500;
+  /* background-color: #020d1e; */
+  border-radius: 50%;
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* color: #fff; */
+}
+
+.title {
+  color: #242331;
+  font-family: 'Inter';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+}
+
+.contentBox {
+  grid-column: 2 / -1;
+  padding-bottom: 16px;
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: -30px;
+  color: #4F4F4F;
+  font-family: 'inter';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 157.4%;
+  width: 95%;
+  /* 25.971px */
+  /* Initial margin-top */
+  transition: max-height 0.2s ease-in, margin-top 0.2s ease-in;
+}
+
+
+/* OPEN STATE */
+.open {
+  /* border-top: 4px solid#020d1e; */
+  /* margin-top: 24px;  */
+}
+
+.open .title{
+  color: rgb(40, 191, 241);
+}
+
+.open .number,
+.open .text {
+  color: #020d1e;
+  
+}
+
+.open .contentBox {
+  max-height: 900px;
+  margin-top: 0px;
+}
+
+@media only screen and (max-width: 61.25em) {
+  .accordion {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 26.875em) {
+
+  .title,
+  .contentBox {
+    font-size: 14px;
+  }
+
+  .item {
+    padding-right: 24px;
+  }
+}
