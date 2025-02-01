@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import { ReactElement, useState } from 'react'
 import HomePage from './home'
 import ComingSoon from '@/components/comingSoon'
-import NewHomePage from './home/newHome'
 
 
 

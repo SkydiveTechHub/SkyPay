@@ -6,9 +6,9 @@ import Layout from '@/components/layout/layout'
 import { AuthProvider } from "@/context/authcontext/authcontext";
 import React, {useEffect} from 'react'
 import initializeAOS from "../../aosConfig";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Protected from "./Protected";
+
 
 export type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;

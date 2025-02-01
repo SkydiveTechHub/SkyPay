@@ -1,17 +1,13 @@
-import Contact from "@/components/contact";
 import Services from "@/components/service";
-import Footer from '@/components/footer'
 import Hero from '@/components/home/homenav/hero'
-import Homenav from '@/components/home/homenav/homenav'
 
 import Testimonial from '@/components/testimonials/testimonial';
 import React, {useEffect} from 'react'
-import initializeAOS from '../../../aosConfig'
 import Download from '@/components/download';
 import Why from "@/components/why";
 import LandingPageLayout from "@/components/layout/landingPageLayout";
 import HowItWorks from "@/components/howitworks";
-import Faq from "@/components/faq";
+
 import NewFaq from "@/components/faq/NewFAQ";
 import Support from "@/components/support";
 
