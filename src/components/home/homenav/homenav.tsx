@@ -57,7 +57,7 @@ function Homenav() {
         <div className='flex justify-between items-center'>
           {/* <div className='flex gap-[80px]'> */}
             <div className='hidden lg:block'>
-              <Image  width={152} height={28} src={'/images/png/LOGO.png'} alt='logo' />
+              <Image  width={152} height={28} src={'/images/png/Logo.png'} alt='logo' />
             </div>
             <div className='lg:hidden'>
               <Image width={152} height={28} src={'/images/png/LOGOF.png'} alt='logo' />
